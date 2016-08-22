@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import sys, requests, bs4, urllib, re
+import sys, requests, bs4, urllib, re, datetime
 
 user = sys.argv[1]
 nick = user.split('!')[0]
@@ -12,7 +12,19 @@ s = requests.Session()
 s.headers = {'User-agent': 'DevBot (https://github.com/Peetz0r/DevBot)'}
 
 if(command == '.cup-a-soup'):
-	print('Ja, het is 4 uur, tijd voor cup-a-soup tomaat!')
+	d = datetime.datetime.now()
+	if((d.hour == 3 or d.hour == 15) and d.minute >= 50):
+		print('Het is bijna 4 uur. Zet je waterkoker alvast aan!')
+	elif(d.hour == 4 or d.hour == 16):
+		print('Ja, het is 4 uur, tijd voor cup-a-soup tomaat!')
+	else:
+		print('Nee! Dan maar een kopje thee.')
+elif(command == '.thee' or command == '.tea'):
+	print('Tea, Earl Grey, hot!')
+elif(command == '.koffie' or command == '.coffee'):
+	print('Koffie is voor mietjes. Echte hackers drinken mate!')
+elif(command == '.mate'):
+	print('Hoe Club Mate in twintig jaar het favoriete drankje werd van hackers en ravers | http://motherboard.vice.com/nl/read/hoe-club-mate-in-twintig-jaar-het-favoriete-drankje-werd-van-hackers-en-ravers')
 elif(command == '.php'):
 	args = args.replace('::', '.')
 	r = s.get('https://secure.php.net/manual-lookup.php', params={'lang': 'en', 'pattern': args})
