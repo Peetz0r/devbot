@@ -11,17 +11,17 @@ command, args = msg.partition(' ')[::2]
 s = requests.Session()
 s.headers = {'User-agent': 'DevBot (https://github.com/Peetz0r/DevBot)'}
 
-if(command == '.cup-a-soup' or command == '.cupasoup'):
+if(command in('cup-a-soup', '.cupasoup')):
 	d = datetime.datetime.now()
-	if((d.hour == 3 or d.hour == 15) and d.minute >= 50):
+	if(d.hour in (3, 15) and d.minute >= 50):
 		print('Het is bijna 4 uur. Zet je waterkoker alvast aan!')
-	elif(d.hour == 4 or d.hour == 16):
+	elif(d.hour in(4, 16)):
 		print('Ja, het is 4 uur, tijd voor cup-a-soup tomaat!')
 	else:
 		print('Nee! Dan maar een kopje thee.')
-elif(command == '.thee' or command == '.tea'):
+elif(command in('.thee', '.tea')):
 	print('Tea, Earl Grey, hot!')
-elif(command == '.koffie' or command == '.coffee'):
+elif(command in('.koffie', '.coffee')):
 	print('Koffie is voor mietjes. Echte hackers drinken mate!')
 elif(command == '.mate'):
 	print('Hoe Club Mate in twintig jaar het favoriete drankje werd van hackers en ravers | http://motherboard.vice.com/nl/read/hoe-club-mate-in-twintig-jaar-het-favoriete-drankje-werd-van-hackers-en-ravers')
