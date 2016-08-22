@@ -11,7 +11,7 @@ command, args = msg.partition(' ')[::2]
 s = requests.Session()
 s.headers = {'User-agent': 'DevBot (https://github.com/Peetz0r/DevBot)'}
 
-if(command == '.cup-a-soup'):
+if(command == '.cup-a-soup' or command == '.cupasoup'):
 	d = datetime.datetime.now()
 	if((d.hour == 3 or d.hour == 15) and d.minute >= 50):
 		print('Het is bijna 4 uur. Zet je waterkoker alvast aan!')
