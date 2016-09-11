@@ -25,6 +25,10 @@ elif(command in('.koffie', '.coffee')):
 	print('Koffie is voor mietjes. Echte hackers drinken mate!')
 elif(command == '.mate'):
 	print('Hoe Club Mate in twintig jaar het favoriete drankje werd van hackers en ravers | http://motherboard.vice.com/nl/read/hoe-club-mate-in-twintig-jaar-het-favoriete-drankje-werd-van-hackers-en-ravers')
+elif(command == '.yolt'):
+	print('ohai r3boot!')
+elif(command == '.tosti'):
+	print('Is het tijd voor een tosti? HET IS ALTIJD TIJD VOOR EEN TOSTI!')
 elif(command == '.php'):
 	args = args.replace('::', '.')
 	r = s.get('https://secure.php.net/manual-lookup.php', params={'lang': 'en', 'pattern': args})
@@ -32,5 +36,17 @@ elif(command == '.php'):
 	if(len(r.history) == 0):
 		print(re.sub('[\s+]+', ' ', 'Geen exact resultaat gevonden, wel o.a. ' + ', '.join(list(soup(id='quickref_functions')[0].stripped_strings)[:5])))
 	else:
-		print(re.sub('[\s+]+', ' ', soup(class_='refpurpose')[0].get_text() + ' | https://php.net/' + urllib.parse.quote_plus(args)))
+		print(re.sub('[\s+]+', ' ', soup.select('.refpurpose, .partintro .para')[0].get_text() + ' | https://php.net/' + urllib.parse.quote_plus(args)))
+elif(command == '.py'):
+#	import importlib, inspect
+#	try:
+#		print(help(args))
+#		args_split = args.split('.', 1)
+#		if(len(args_split) == 1):
+#			print(inspect.getdoc(eval('importlib.import_module(args_split[0])')))
+#		else:
+#			print(inspect.getdoc(eval('importlib.import_module(args_split[0]).'+args_split[1])))
+#	except:
+#		print('DevBot\'s python kon "' + args + '" niet vinden.')
+		print('.py staat nu even uit. Vraag Peetz0r waarom')
 

@@ -30,9 +30,6 @@ class DevBot(IRCClient):
 		print('signed on')
 		self.join('##hackenkunjeleren')
 
-	def joined(self, channel):
-		self.msg(channel, 'ohai')
-
 	def privmsg(self, user, channel, msg):
 		print(user)
 		print(channel)
@@ -42,7 +39,7 @@ class DevBot(IRCClient):
 			out = subprocess32.check_output(['./backend.py', user, channel, msg])
 			print('done, got this:')
 			print(out)
-			self.notice(channel, out.splitlines()[0])
+			self.msg(channel, out.splitlines()[0])
 
 	def kickedFrom(self, channel, user, msg):
 		print('kicked, quitting')
