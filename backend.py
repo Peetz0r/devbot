@@ -26,7 +26,7 @@ elif(command in('.thee', '.tea')):
 elif(command in('.koffie', '.coffee')):
 	print('Koffie is voor mietjes. Echte hackers drinken mate!')
 elif(command == '.mate'):
-	print('Hoe Club Mate in twintig jaar het favoriete drankje werd van hackers en ravers | http://motherboard.vice.com/nl/read/hoe-club-mate-in-twintig-jaar-het-favoriete-drankje-werd-van-hackers-en-ravers')
+	print('Geniet met Mate ;)')
 elif(command == '.yolt'):
 	print('ohai r3boot!')
 elif(command == '.tosti'):
